@@ -41,7 +41,7 @@ var heading=data.heading;
 var date=data.date;
 var content=data.content;
 var htmltemplate=
-` <html>
+`<html>
    <head>
    <title>
      ${title}
