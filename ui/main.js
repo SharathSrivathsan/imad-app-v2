@@ -1,5 +1,5 @@
 //counter
-var button=document.getElementById('counter');
+var button=document.getElementById("counter");
 var counter=0;
 button.onclick=function(){
   //create a request
@@ -9,7 +9,7 @@ button.onclick=function(){
    if(request.readystate===XMLHttpRequest.DONE){
        if(request.status===200){                               // 200: a successful request
            var counter=request.responseText;
-           var span=document.getElementById('count');
+           var span=document.getElementById("count");
            span.innerHTML=counter.toString();
        }
    }
