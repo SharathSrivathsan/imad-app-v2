@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var article={
     'article-one':{
-    title:'Article-one:sharath',
+    title:'article-one:sharath',
     heading:'article-one',
     date:'5 sep,2017',
     content:` <p>
@@ -37,7 +37,7 @@ var article={
         </p>`
     }
 };
-function createtemplate(data){
+function createTemplate(data){
     
 var title=data.title;
 var date=data.date;
@@ -86,7 +86,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/:articleName', function (req, res) {
-  res.send(createtemplate(article[articleName]));
+  res.send(createTemplate(article[articleName]));
 
     var articleName=req.params.articleName;
 });
