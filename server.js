@@ -34,7 +34,7 @@ content:         `<p>this is my second article</p>`
 content:         `<p>this is my third article</p>`    
     }
 };
-function  createtemplate(data){
+function createtemplate(data){
 
 var title=data.title;
 var heading=data.heading;
