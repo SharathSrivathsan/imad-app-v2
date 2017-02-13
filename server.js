@@ -6,11 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 var article={
-    'articleone':{
-    title:'article-one:sharath',
-    heading:'article-one',
-    date:'5 sep,2017',
-    content:` <p>
+    'article-one':{
+  title:'article-one:sharath',
+  heading:'article-one',
+  date:'sep 5,2016',
+content:         `<p>
         this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.
         </p>    
         <p>
@@ -18,38 +18,34 @@ var article={
         </p>    
         <p>
         this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article.
-        </p>    `
+        </p>`    
     },
-    'articletwo':{
-         title:'article-two:sharath',
-    heading:'article-two',
-    date:'15 sep,2017',
-    content:` <p>
-        this is the content for my second article.
-        </p>`
+    'article-two':{
+  title:'article-two:sharath',
+  heading:'article-two',
+  date:'sep 15,2016',
+content:         `<p>this is my second article</p>`    
     },
-    'articlethree':{
-         title:'article-three:sharath',
-    heading:'article-three',
-    date:'25 sep,2017',
-    content:` <p>
-        this is the content for my third article.
-        </p>`
+    'article-three':{
+    
+  title:'article-three:sharath',
+  heading:'article-three',
+  date:'sep 25,2016',
+content:         `<p>this is my third article</p>`    
     }
 };
-function createTemplate(data){
-    
+function createtemplate(data){
 var title=data.title;
-var date=data.date;
 var heading=data.heading;
+var date=data.date;
 var content=data.content;
 var htmltemplate=
-`<html>
-<head>
-    <title>
-       ${title}
+   ` <html>
+   <head>
+   <title>
+     ${title}
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width-device-width, initial-scale=1 " />
     <link href="/ui/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -60,39 +56,27 @@ var htmltemplate=
     </div>
     <hr/>
     <h3>
-       ${heading}
+        ${heading}
     </h3>
     <div>
-        ${date}
+       ${date}
     </div>
     <div>
-        
-      ${content}
+    ${content}
     </div>
     </div>
 </body>
-</html>
-`;
-
-    return htmltemplate;
+</html>`;
+return htmltemplate;
 }
-
-
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
-app.get('/:articleName', function (req, res) {
-  res.send(createTemplate(article[articleName]));
-
+app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
+     res.send(createtemplate(article[articleName]));
 });
-
-
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
