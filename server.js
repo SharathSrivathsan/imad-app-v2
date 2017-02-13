@@ -34,20 +34,21 @@ content:         `<p>this is my second article</p>`
 content:         `<p>this is my third article</p>`    
     }
 };
-function createtemplate(data){
+function  createtemplate(data){
+
 var title=data.title;
 var heading=data.heading;
 var date=data.date;
 var content=data.content;
 var htmltemplate=
-   ` <html>
+` <html>
    <head>
    <title>
      ${title}
     </title>
     
     <link href="/ui/style.css" rel="stylesheet" />
-</head>
+    </head>
 <body>
     <div class="container">
     <div>
